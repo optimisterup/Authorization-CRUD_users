@@ -136,7 +136,7 @@ VALUES (:login, :password, :firstname, :surname, :sex, :birthday, :admin)";
                 // Attempt to execute the prepared statement
                 if ($stmt->execute()) {
                      //Redirect to login page
-                    header("location: /Site/index.php");
+                    header("location: /index.php");
                 } else {
                     echo "Something went wrong. Please try again later.";
                 }
