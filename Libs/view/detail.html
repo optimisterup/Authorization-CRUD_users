@@ -11,13 +11,13 @@
 <table border='4' id = 'myTable' class = 'table' width='100%'>
     <thead class="thead-inverse">
     <tr>
-        <th><a href="">Login</a></th>
-        <th><a href="">Name</a></th>
-        <th><a href="">Surname</a></th>
-        <th><a href="">Sex</a></th>
-        <th><a href="">Birthday</a></th>
-        <th><a href="">Admin Rules</a></th>
-        <th><a href="">Actions</a></th>
+        <th>Login</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Sex</th>
+        <th>Birthday</th>
+        <th>Admin Rules</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <?php if(count($download)!=0){
@@ -30,6 +30,7 @@
         <td><?php echo $download[$i]['birthday'];?></td>
         <td><?php echo $download[$i]['admin'];?></td>
         <td>
+
             <a href="/Libs/registration.php?id=<?php echo $download[$i]['id'];?>">Edit</a>
             <form action="/Libs/delete.php" method="post">
                 <input type="hidden" name="delete" value="<?php echo $download[$i]['id']; ?>">
@@ -41,7 +42,8 @@
     <tr><td>No results</td></tr>
     <?php }?>
 </table>
-<a href="/Libs/registration.php">Add new user page</a>
+<a href="/Libs/registration.php">Add new user page</a><br>
+<a href="../index.php">Index page</a><br>
 <a href="/Libs/logout.php">Logout</a>
 </body>
 </html>

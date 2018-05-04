@@ -4,16 +4,11 @@ if(!isset($_SESSION['login']) || empty($_SESSION['login'])){
     header("location: /Libs/authorization.php");
     exit;
 }
-
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     // Include config file
-    require_once 'config.php';
-    $sql = "SELECT * FROM users WHERE `id`=:id;";
-    $id = trim($_GET["id"]);
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $id, PDO::PARAM_STR);
-    $stmt->execute();
-    $download = $stmt->fetchAll();
+    require_once 'Db.php';
+    $db=new DB;
+    $download=$db->detail($_GET["id"]);
     $password = "";
     $login = $download[0]["login"];
     $firstname = $download[0]["firstname"];
